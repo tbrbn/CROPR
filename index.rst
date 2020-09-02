@@ -1,7 +1,7 @@
-$project
+CROPR
 ========
 
-$project will solve your problem of where to start with documentation,
+CROPR will solve your problem of where to start with documentation,
 by providing a basic explanation of how to do it easily.
 
 Look how easy it is to use:
@@ -19,7 +19,7 @@ Features
 Installation
 ------------
 
-Install $project by running:
+Install CROPR by running:
 
     install project
 
@@ -27,15 +27,15 @@ Contribute
 ----------
 
 - Issue Tracker: github.com/$project/$project/issues
-- Source Code: github.com/$project/$project
+
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@google-groups.com
+We have a mailing list located at: support@croprcropcrop.com
 
 License
 -------
 
-The project is licensed under the BSD license.
+The project is licensed under the GPL license.
