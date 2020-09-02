@@ -39,3 +39,6 @@ License
 -------
 
 The project is licensed under the GPL license.
+
+User guide
+=========
