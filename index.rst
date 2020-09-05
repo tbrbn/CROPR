@@ -41,4 +41,5 @@ License
 The project is licensed under the GPL license.
 
 User guide
-=========
+==========
+.. image:: imgs/CROPR_intro.png
