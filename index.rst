@@ -1,44 +1,43 @@
 CROPR
 ========
 
-CROPR will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+Welcome! If you're reading this it means you purchased or are considering purchasing CROPR.
+This documentation will guide you on how to handle the application.
 
-Look how easy it is to use:
-
-    import project
-    # Get your stuff done
-    project.do_stuff()
+CROPR is a small stand-alone application that speeds up the necessary yet annoying
+cropping and scaling of blueprints view before starting to actually model.
 
 Features
 --------
 
-- Be awesome
-- Make things faster
+By drawing large bounding boxes around each view, CROPR automatically generate a smaller bounding box
+that contains the desired portion of the blueprint. The generated bounding boxes
+are exactly on the correct pixel.
+Once all the views are ready, CROPR scales them accordingly so each view are aligned and matching each other.
+
+The next step is simply to import the generated views into the 3D software of your choice.
+
 
 Installation
 ------------
 
-Install CROPR by running:
-
-    install project
+Simply run the executable file you downloaded
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/$project/$project/issues
+- https://gum.co/ZEyTk
 
 
 Support
 -------
 
-If you are having issues, please let us know.
-We have a mailing list located at: support@croprcropcrop.com
+If you are having issues, please let us know: support@thibautbourbon.com
 
 License
 -------
 
-The project is licensed under the GPL license. Blabliblo
+The project is licensed under the GPL license.
 
 User guide
 ==========
