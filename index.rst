@@ -43,3 +43,6 @@ The project is licensed under the GPL license.
 User guide
 ==========
 
+.. image:: imgs/demo02.gif
+
+
