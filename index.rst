@@ -38,7 +38,7 @@ We have a mailing list located at: support@croprcropcrop.com
 License
 -------
 
-The project is licensed under the GPL license.
+The project is licensed under the GPL license. Blabliblo
 
 User guide
 ==========
