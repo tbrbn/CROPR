@@ -1,5 +1,6 @@
 CROPR
 ========
+.. image:: imgs/CROPR_intro.png
 
 Welcome! If you're reading this it means you purchased or are considering purchasing CROPR.
 This documentation will guide you on how to handle the application.
@@ -41,4 +42,4 @@ The project is licensed under the GPL license.
 
 User guide
 ==========
-.. image:: imgs/CROPR_intro.png
+
