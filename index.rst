@@ -43,8 +43,15 @@ License
 
 The project is licensed under the GPL license.
 
-User guide
+USER GUIDE
 ==========
+
+User interface
+--------------
+
+To start CROPR, simply double click on the executable file you downloaded. The following menu should pop-up:
+.. image:: imgs/UI_main_menu.png
+
 
 Commands
 --------
@@ -59,6 +66,7 @@ Most of the commands are context based are visible under the mouse pointer:
 - <C> - Contrast mode
 - <N> - Manual mode
 - <Control Z> - Undo
+- <Control V> - Paste image
 - <Esc> - skip
 - <Space bar> - confirm
 
