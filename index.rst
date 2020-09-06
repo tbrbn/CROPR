@@ -85,4 +85,8 @@ Most of the commands are context based are visible under the mouse pointer:
 - <Esc> - skip
 - <Space bar> - confirm
 
+Standard case
+-------------
+
+A typical blueprints shall look like the following (image courtesy of http://www.the-blueprints.com )
 
