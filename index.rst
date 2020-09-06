@@ -5,24 +5,27 @@ CROPR
 Welcome! If you're reading this it means you purchased or are considering purchasing CROPR.
 This documentation will guide you on how to handle the application.
 
-CROPR is a small stand-alone application that speeds up the necessary yet annoying
-cropping and scaling of blueprints view before starting to actually model.
+CROPR is a small stand-alone application that speeds up the preprocessing of vehicle blueprints
+before using them as reference images: each view is cropped from the original blueprint and scaled accordingly
+so it fit the other views dimensions.
 
 Features
 --------
 
-By drawing large bounding boxes around each view, CROPR automatically generate a smaller bounding box
-that contains the desired portion of the blueprint. The generated bounding boxes
-are exactly on the correct pixel.
-Once all the views are ready, CROPR scales them accordingly so each view are aligned and matching each other.
+Under the hood of CROPR is a very basic edge detector function: since 99% of the blueprints are
+in black and white, the application uses a threshold value to detect the contour of each view.
 
-The next step is simply to import the generated views into the 3D software of your choice.
-
+Some edge cases exists, which is why CROPR has the following features:
+- Ignore ground
+- Mask
+- Threshold adjustment
+- Zoom
+- Manual mode (no contour detection)
 
 Installation
 ------------
 
-Simply run the executable file you downloaded
+No installation needed, simply run the executable file you downloaded
 
 Contribute
 ----------
@@ -43,6 +46,20 @@ The project is licensed under the GPL license.
 User guide
 ==========
 
-.. image:: imgs/demo02.gif
+Commands
+--------
+
+Most of the commands are context based are visible under the mouse pointer:
+
+- <Scroll button> - Scroll up/down
+- <Shift> + <Scroll button> - Scroll left/right
+- <Num +> / <Num -> - Zoom in/out (NOTE: the image default size is the maximum size)
+- <G> - Ground mode
+- <M> - Mask mode
+- <C> - Contrast mode
+- <N> - Manual mode
+- <Control Z> - Undo
+- <Esc> - skip
+- <Space bar> - confirm
 
 
