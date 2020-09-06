@@ -50,8 +50,23 @@ User interface
 --------------
 
 To start CROPR, simply double click on the executable file you downloaded. The following menu should pop-up:
+
 .. image:: imgs/UI_main_menu.png
 
+Loading a file
+--------------
+
+To load an image, you can either hit the "Import Image" button on the top bar and navigate to your file.
+Another solution paste an image from the
+clipboard by hitting the <Control + V> command.
+
+Output directory
+----------------
+
+You can chose where the output files will be saved by pressing the "Output directory" button on
+the top bar and browsing to the destination folder of your choice. By default the destination
+folder is the one the input image has been loaded from, so if you chose the Paste method you might want to
+make sure you save the output to a directory you know.
 
 Commands
 --------
