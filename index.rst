@@ -43,8 +43,8 @@ License
 
 The project is licensed under the GPL license.
 
-USER GUIDE
-==========
+GETTING STARTED
+===============
 
 In this section we will cover the user interface and the standard procedure. Edge cases are treated in the next section.
 
