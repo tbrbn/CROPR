@@ -131,7 +131,7 @@ Repeat this operation for each view and after the last view, you have one last c
 
 Then, a pop-up message will confirm everything went well and where you can find the output files.
 
-.. image:: imgs/success.jpg
+.. image:: imgs/sucess.jpg
 
 Skipping view
 -------------
