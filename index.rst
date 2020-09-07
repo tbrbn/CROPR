@@ -216,6 +216,7 @@ FUTURE RELEASES
 CROPR is still very young and comes with its flaws. If you notice unexpected behaviour, report it by all mean!
 
 Some known limitations, to be fixed in future releases are:
+
 - Starting time can be up to 10s depending on your computer
 - The edge cases mode are not cumulative, that means you cannot combine mask mode and ground mode at the moment
 - Zoom function is limited to reduce size
