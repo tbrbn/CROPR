@@ -1,5 +1,6 @@
 CROPR
 =====
+
 .. image:: imgs/CROPR_intro.png
 
 Welcome! If you're reading this it means you purchased or are considering purchasing CROPR.
@@ -105,7 +106,8 @@ Isolating views
 
 A typical blueprints shall look like the following:
 
-..Image to INsert ..
+.. image:: imgs/ex_sport_car.jpg
+
 (Obviously the views can placed differently)
 
 Once the blueprint is imported and the output folder is chosen, you can see below the pointer which view to isolate first. The order
@@ -113,10 +115,10 @@ is always the following:
 
 - Side > Front > Top > Rear
 
-To isolate the view, simply define by two cliks a large bounding box around the view. After the second click, CROPR will automatically
-resize the bounding box to fit the countour, and you can move on to the next view:
+To isolate the view, simply define by two clicks a large bounding box around the view. After the second click, CROPR will automatically
+resize the bounding box to fit the contour, and you can move on to the next view:
 
-.image_bounding_box
+.. image:: imgs/default_side_view.gif
 
 Notice how the text under the pointer is updated.
 
@@ -130,6 +132,7 @@ After the last view, you have one last click to confirm:
 
 Then, a pop-up message will confirm everything went well and where you can find the output files.
 
+.. image:: imgs/success.jpg
 
 Skipping view
 -------------
