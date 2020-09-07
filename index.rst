@@ -88,5 +88,24 @@ Most of the commands are context based are visible under the mouse pointer:
 Standard case
 -------------
 
-A typical blueprints shall look like the following (image courtesy of http://www.the-blueprints.com )
+A typical blueprints shall look like the following:
+..Image to INsert ..
+(Obviously the views can placed differently)
+
+Once the blueprint is imported and the output folder is chosen, you can see below the pointer which view to isolate first. The order
+is always_ the following:
+- Side > Front > Top > Rear
+
+To isolate the view, simply define by two cliks a large bounding box around the view. After the second click, CROPR will automatically
+resize the bounding box to fit the countour, and you can move on to the next view:
+.image_bounding_box
+
+Notice how the text under the pointer is updated.
+
+Repeat this operation for each view:
+..image_escape_example..
+
+After the last view, you have one last click to confirm:
+..image_last_click..
+
 
