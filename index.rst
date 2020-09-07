@@ -1,4 +1,3 @@
-=====
 CROPR
 =====
 .. image:: imgs/CROPR_intro.png
@@ -12,7 +11,7 @@ so it fit the other views dimensions.
 
 
 Features
-========
+--------
 
 Under the hood of CROPR is a very basic edge detector function: since 99% of the blueprints are
 in black and white, the application uses a threshold value to detect the contour of each view.
@@ -45,7 +44,7 @@ License
 
 The project is licensed under the GPL license.
 
-==============
+
 GETTING STARTED
 ===============
 
