@@ -46,6 +46,8 @@ The project is licensed under the GPL license.
 USER GUIDE
 ==========
 
+In this section we will cover the user interface and the standard procedure. Edge cases are treated in the next section.
+
 User interface
 --------------
 
@@ -85,8 +87,8 @@ Most of the commands are context based are visible under the mouse pointer:
 - <Esc> - skip
 - <Space bar> - confirm
 
-Standard case
--------------
+Isolating views
+---------------
 
 A typical blueprints shall look like the following:
 
@@ -129,6 +131,12 @@ Undo
 ----
 
 Sometime, you want to undo the action you just did. Simply hit <Control + Z> to jump back to the previous view.
+
+EDGE CASES
+==========
+
+In some cases, the blueprint you imported is not as clean as we wish it should be: annotations such as ground level or dimensions are present, 
+or some views overlap each other. There are different way to deal with these deviations:
 
 Ground mode
 -----------
