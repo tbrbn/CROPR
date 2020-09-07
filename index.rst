@@ -89,23 +89,55 @@ Standard case
 -------------
 
 A typical blueprints shall look like the following:
+
 ..Image to INsert ..
 (Obviously the views can placed differently)
 
 Once the blueprint is imported and the output folder is chosen, you can see below the pointer which view to isolate first. The order
-is always_ the following:
+is always the following:
+
 - Side > Front > Top > Rear
 
 To isolate the view, simply define by two cliks a large bounding box around the view. After the second click, CROPR will automatically
 resize the bounding box to fit the countour, and you can move on to the next view:
+
 .image_bounding_box
 
 Notice how the text under the pointer is updated.
 
 Repeat this operation for each view:
-..image_escape_example..
+
+..image_repeat_fast_forward_example..
 
 After the last view, you have one last click to confirm:
+
 ..image_last_click..
 
+Then, a pop-up message will confirm everything went well and where you can find the output files.
 
+
+Skipping view
+-------------
+
+Some blueprint do not include all views, or sometime you may only be interested by only a fraction of the available views.
+CROPR enables you to skip isolating a view by hitting the <Escape> button.
+
+..image_escape_exemple_
+
+
+Undo
+----
+
+Sometime, you want to undo the action you just did. Simply hit <Control + Z> to jump back to the previous view.
+
+Ground mode
+-----------
+
+A feature often present in cars blueprint is the ground location. While this can be useful to align the different views, it actually
+becomes a hinder for CROPR when finding the contours of the view.
+
+..image_wrong_result..
+
+To work around this issue, activate the ground mode by hitting the <G> key. Notice the background color changes as well.
+
+..image_to_ground_mode..
