@@ -118,7 +118,9 @@ is always the following:
 To isolate the view, simply define by two clicks a large bounding box around the view. After the second click, CROPR will automatically
 resize the bounding box to fit the contour, and you can move on to the next view:
 
-.. image:: imgs/default_side_view.gif
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/S1c5W2jchZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Notice how the text under the pointer is updated.
 
