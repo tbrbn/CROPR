@@ -76,7 +76,7 @@ make sure you save the output to a directory you know.
 Commands
 --------
 
-Most of the commands are context based are visible under the mouse pointer:
+Most of the commands are context based are visible under the cursor:
 
 - <Scroll button> - Scroll up/down
 - <Shift> + <Scroll button> - Scroll left/right
@@ -110,10 +110,12 @@ A typical blueprints shall look like the following:
 
 (Obviously the views can placed differently)
 
-Once the blueprint is imported and the output folder is chosen, you can see below the pointer which view to isolate first. The order
+Once the blueprint is imported and the output folder is chosen, you can see below the cursor which view to isolate. The order
 is always the following:
 
 - Side > Front > Top > Rear
+
+If you're not sure, just take a look beneath the cursor, the current view being treated is displayed.
 
 To isolate the view, simply define by two clicks a large bounding box around the view. After the second click, CROPR will automatically
 resize the bounding box to fit the contour, and you can move on to the next view:
