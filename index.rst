@@ -10,6 +10,7 @@ CROPR is a small stand-alone application that speeds up the preprocessing of veh
 before using them as reference images: each view is cropped from the original blueprint and scaled accordingly
 so it fit the other views dimensions.
 
+"hello"
 
 Features
 --------
