@@ -1,43 +1,3 @@
-Skip to content
-Why GitHub? 
-Team
-Enterprise
-Explore 
-Marketplace
-Pricing 
-Search
-
-Sign in
-Sign up
-readthedocs
-/
-sphinx_rtd_theme
-1443.4k1.4k
-Code
-Issues
-143
-Pull requests
-41
-Actions
-Projects
-1
-Wiki
-Security
-Insights
-Join GitHub today
-GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.
-
-sphinx_rtd_theme/docs/conf.py /
-@agjohnson
-agjohnson Bump version
-Latest commit a452102 on Jun 17
- History
- 6 contributors
-@agjohnson@Blendify@ericholscher@jessetan@s-weigand@macagua
-120 lines (99 sloc)  2.84 KB
-  
-# -*- coding: utf-8 -*-
-
 import sys
 import os
 import re
@@ -69,6 +29,7 @@ release = '0.5.0'
 author = u'Dave Snider, Read the Docs, Inc. & contributors'
 copyright = author
 language = 'en'
+includehidden=False
 
 extensions = [
     'sphinx.ext.intersphinx',
