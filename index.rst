@@ -137,7 +137,7 @@ Skipping view
 Some blueprint do not include all views, or sometime you may only be interested by only a fraction of the available views.
 CROPR enables you to skip isolating a view by hitting the <Escape> button.
 
-..image_escape_exemple_
+.. imgae:: imgs/escape_button.gif
 
 
 Undo
