@@ -10,7 +10,6 @@ CROPR is a small stand-alone application that speeds up the preprocessing of veh
 before using them as reference images: each view is cropped from the original blueprint and scaled accordingly
 so it fit the other views dimensions.
 
-"hello"
 
 Features
 --------
@@ -95,8 +94,8 @@ Most of the commands are context based are visible under the cursor:
 Zoom
 ----
 
-Sometime, the imported image is huge. Like, way too big to properly work on it. Before starting to define the bounding boxes and
-crop the hell out of the blueprint, you can reduce the size of the image. Once you're happy with it, you can start clicking around.
+Sometime, the imported image is too big to properly work on it. Before starting to define the bounding boxes and
+crop the mess out of the blueprint, you can reduce the size of the image. Once you're happy with it, you can start clicking around.
 Note that this implies less accurate results since this changes the image resolution. Note as well the maximum allowed resolution
 is the initial one.
 
