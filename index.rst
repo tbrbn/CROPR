@@ -10,6 +10,7 @@ CROPR is a small stand-alone application that speeds up the preprocessing of veh
 before using them as reference images: each view is cropped from the original blueprint and scaled accordingly
 so it fit the other views dimensions.
 
+"hello"
 
 Features
 --------
@@ -76,7 +77,7 @@ make sure you save the output to a directory you know.
 Commands
 --------
 
-Most of the commands are context based are visible under the mouse pointer:
+Most of the commands are context based are visible under the cursor:
 
 - <Scroll button> - Scroll up/down
 - <Shift> + <Scroll button> - Scroll left/right
@@ -110,24 +111,26 @@ A typical blueprints shall look like the following:
 
 (Obviously the views can placed differently)
 
-Once the blueprint is imported and the output folder is chosen, you can see below the pointer which view to isolate first. The order
+Once the blueprint is imported and the output folder is chosen, you can see below the cursor which view to isolate. The order
 is always the following:
 
 - Side > Front > Top > Rear
+
+If you're not sure, just take a look beneath the cursor, the current view being treated is displayed.
 
 To isolate the view, simply define by two clicks a large bounding box around the view. After the second click, CROPR will automatically
 resize the bounding box to fit the contour, and you can move on to the next view:
 
 .. raw:: html
 
-    <iframe width="1120" height="613" src="https://www.youtube.com/embed/S1c5W2jchZY&hd=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="1120" height="613" src="https://www.youtube.com/embed/S1c5W2jchZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Notice how the text under the pointer is updated.
 Repeat this operation for each view and after the last view, you have one last click to confirm:
 
 .. raw:: html
 
-    <iframe width="1120" height="630" src="https://www.youtube.com/embed/NhQSxOga-1k&hd=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="1120" height="630" src="https://www.youtube.com/embed/NhQSxOga-1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Then, a pop-up message will confirm everything went well and where you can find the output files.
 
