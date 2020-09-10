@@ -195,16 +195,18 @@ Click on any incriminated area, the red bounding box will update in real time. O
 Contrast mode
 -------------
 
-In cases where the blueprints includes a lot of gray gradient, CROPR can have trouble finding the
+In cases where the contour are not very pronounced (for example in light gray), CROPR can have trouble finding the
 correct contour. You can help CROPR by turning on the Contrast mode with the <C> key, which will allow you to
 adjusting the threshold value once the large bounding box is defined. Notice the change of background color.
 
-..image_turn_threshold_on
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Vt1sH3Ug7Fc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 Once in the contrast mode, use the <+> and <-> buttons of the num pad to play with the threshold, and hit <Spacebar> when
 you are satisfied with the result.
 
-..image_good_example
 
 Manual mode
 -----------
@@ -212,7 +214,11 @@ Manual mode
 Sometime, it's too much to handle for CROPR and you need to have full control. The manual will tell CROPR to let you
 have the command and decide how the bounding box is supposed to look.
 
-..image_manual_mode
+.. raw:: html
+
+    asdasdasd
+
+
 
 FUTURE RELEASES
 ===============
