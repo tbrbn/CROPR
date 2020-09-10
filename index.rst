@@ -211,12 +211,13 @@ you are satisfied with the result.
 Manual mode
 -----------
 
-Sometime, it's too much to handle for CROPR and you need to have full control. The manual will tell CROPR to let you
-have the command and decide how the bounding box is supposed to look.
+Sometime, it's too much to handle for CROPR and you need to have full control. Typical cases are poor quality images, blueprint with many many annotations,
+or simply you want to crop and isolate a specific area because reasons.
+The manual will tell CROPR to let you have the command and decide how the bounding box is supposed to look.
 
 .. raw:: html
 
-    asdasdasd
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/asvuFovY2AY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
