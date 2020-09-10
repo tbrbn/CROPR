@@ -159,6 +159,7 @@ becomes a hinder for CROPR when finding the contours of the view.
 
 .. image:: imgs/example_ground_fail.png
 
+
 To work around this issue, activate the ground mode by hitting the <G> key. Notice the background color changes as well.
 
 .. raw:: html
