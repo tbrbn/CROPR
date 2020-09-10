@@ -78,17 +78,24 @@ Commands
 
 Most of the commands are context based are visible under the cursor:
 
-- <Scroll button> - Scroll up/down
-- <Shift> + <Scroll button> - Scroll left/right
-- <Num +> / <Num -> - Zoom in/out (NOTE: the image default size is the maximum size, see next paragraph)
-- <G> - Ground mode
-- <M> - Mask mode
-- <C> - Contrast mode
-- <N> - Manual mode
-- <Control Z> - Undo
-- <Control V> - Paste image
-- <Esc> - skip
-- <Space bar> - confirm
+- Navigation:
+    - <Scroll button> - Scroll up/down
+    - <Shift> + <Scroll button> - Scroll left/right
+    - <Control Z> - Undo
+    - <Esc> - skip
+
+- Zoom:
+    - <Num +> / <Num -> - Zoom in/out (NOTE: the image default size is the maximum size, see next paragraph)
+
+- Edge cases (for detail see next chapter):
+    - <G> - Ground mode
+    - <M> - Mask mode
+    - <C> - Contrast mode
+    - <N> - Manual mode
+
+- Misc (context based):
+    - <Control V> - Paste image
+    - <Space bar> - confirm
 
 
 Zoom
