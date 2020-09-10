@@ -123,15 +123,10 @@ resize the bounding box to fit the contour, and you can move on to the next view
 
 .. raw:: html
 
-    <iframe width="1120" height="613" src="https://www.youtube.com/embed/S1c5W2jchZY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/B-j2uRP-ApI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Notice how the text under the pointer is updated.
 Repeat this operation for each view and after the last view, you have one last click to confirm:
-
-.. raw:: html
-
-    <iframe width="1120" height="630" src="https://www.youtube.com/embed/NhQSxOga-1k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 Then, a pop-up message will confirm everything went well and where you can find the output files.
 
 .. image:: imgs/sucess.jpg
