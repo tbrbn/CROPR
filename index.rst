@@ -157,18 +157,18 @@ Ground mode
 A feature often present in cars blueprint is the ground location. While this can be useful to align the different views, it actually
 becomes a hinder for CROPR when finding the contours of the view.
 
-..image_wrong_result..
+.. image:: imgs/example_ground_fail.png
 
 To work around this issue, activate the ground mode by hitting the <G> key. Notice the background color changes as well.
 
-..image_to_ground_mode..
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/3qRNEgQtSuw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The purpose of the ground mode is to tell CROPR where (approximately) is located the ground, so CROPR can ignore it. In ground mode,
 you define the large bounding box as usual. After the second click appears a horizontal line, that you have to place slightly above 
 the ground (not too high thoug or CROPR can miss details!). 
 Usually 5-10 pixels above the floors are enough:
-
-..image_ground_mode_
 
 
 Mask mode
