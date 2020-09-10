@@ -174,20 +174,22 @@ Usually 5-10 pixels above the floors are enough:
 Mask mode
 ---------
 
-In some other case, annotations or watermark are messing with the way CROPR calculates the contour. In this mode as well, the purpose
-is to help CROPR do its work and let it know what to ignore. To activate the Mask mode, hit <M>. Here as well, the background color changes:
-
-..image_to_mask_mode..
+In some other case, annotations or watermark can mess with the way CROPR calculates the contour. Also, for vehicle such as motorcycles,
+the views can be sometime overlapping as shown on the video below.
+The purpose of the Mask Mode is to help CROPR do its work and let it know what to ignore. To activate the Mask mode, hit <M>. Here as well, the background color changes:
 
 Once the large boundary box is defined, i.e after the second click, you jump to mask mode. The pointer turns into a grey box, which
 you can change size by pressing <1>, <2> or <3> on the Num pad.
 
-..image_zoom_boxes..
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/c7SZBNwiGw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 Click on any incriminated area, the red bounding box will update in real time. Once you're happy with it, hit the
 <Spacebar> to confirm and carry on to the next view.
 
-..image_update_box..
+
 
 
 Contrast mode
