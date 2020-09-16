@@ -67,6 +67,7 @@ class MainWindow:
     def update_canvas(self):
         w = self.img.width()
         h = self.img.height()
+        self.root.state('normal')
         self.canvas.itemconfig(self.img_on_canvas, image=self.img, anchor=CENTER)
         self.get_size()
         self.canvas.coords(self.img_on_canvas, self.img.width() / 2 + 2, self.img.height() / 2 + 2)
@@ -84,7 +85,10 @@ class MainWindow:
         if self.screen_h < h or self.screen_w < w:
             self.root.state('zoomed')
         else:
-            self.root.geometry(str(w + 100) + "x" + str(h + 100))
+            if w+100 < 400 or h+100 < 430:
+                self.root.geometry("400x430")
+            else:
+                self.root.geometry(str(w + 100) + "x" + str(h + 100))
 
     def clipboard_import(self, event):
         try:
@@ -160,8 +164,11 @@ class Lines:
         self.mask_mode_text = "<M> - Mask mode off\n"
         self.contrast_mode_text = "<C> - Contrast mode off\n"
         self.manual_mode_text = "<N> - Manual mode off\n"
-        self.view_text = "Side\n"
         self.main_window = mainwindow
+        if self.main_window.box_settings_var.get() == 0:
+            self.view_text = "Side\n"
+        else:
+            self.view_text = "Left\n"
         self.master = master
         self.mask = None
         self.rect_dash = []
@@ -465,7 +472,7 @@ class Lines:
         try:
             autoScaler = AutoScaler(self.main_window.images_unscaled, self.main_window.img_dir,
                                     self.main_window.img_name,
-                                    self.on_off)
+                                    self.on_off, self.main_window.box_settings_var.get())
             messagebox.showinfo(title="Success!",
                                 message="The following images are saved in\n" + self.main_window.img_dir
                                         + ":\n\n" + autoScaler.get_views())
@@ -831,40 +838,84 @@ class ContrastAdjuster:
 
 
 class AutoScaler:
-    def __init__(self, images_unscaled, img_dir, img_name, on_off):
+    def __init__(self, images_unscaled, img_dir, img_name, on_off, all_views):
         self.views = ["", "", "", "", "", ""]
         self.on_off = on_off
-        ## order is Side - Front - Top -Rear
-        # self.get_shortest_length(images_unscaled)
-        maxsize_a = min(images_unscaled[0].size[1], images_unscaled[1].size[1], images_unscaled[3].size[1])
-        maxsize_b = min(images_unscaled[0].size[0], images_unscaled[2].size[0])
-        maxsize_c = min(images_unscaled[1].size[0], images_unscaled[3].size[0], images_unscaled[2].size[1])
-        # print(maxsize_a, maxsize_b, maxsize_c)
 
-        if on_off[0] == 1:
-            #images_unscaled[0].thumbnail((maxsize_b, maxsize_a))
-            a = images_unscaled[0].resize((maxsize_b, maxsize_a))
-            #images_unscaled[0].save(img_dir + img_name + "_side.png", "PNG")
-            a.save(img_dir + img_name + "_side.png", "PNG")
-            self.views[0] = img_name + "_side.png"
+        if all_views == 0:
+            ## order is Side - Front - Top -Rear
+            h_all = min(images_unscaled[0].size[1], images_unscaled[1].size[1], images_unscaled[3].size[1])
+            l_all = min(images_unscaled[0].size[0], images_unscaled[2].size[0])
+            w_all = min(images_unscaled[1].size[0], images_unscaled[3].size[0], images_unscaled[2].size[1])
+            # print(maxsize_a, maxsize_b, maxsize_c)
 
-        if on_off[1] == 1:
-            #images_unscaled[1].thumbnail((maxsize_c, maxsize_a))
-            a = images_unscaled[1].resize((maxsize_c, maxsize_a))
-            a.save(img_dir + img_name + "_front.png", "PNG")
-            self.views[1] = img_name + "_front.png"
+            if on_off[0] == 1:
+                #images_unscaled[0].thumbnail((maxsize_b, maxsize_a))
+                a = images_unscaled[0].resize((l_all, h_all))
+                #images_unscaled[0].save(img_dir + img_name + "_side.png", "PNG")
+                a.save(img_dir + img_name + "_side.png", "PNG")
+                self.views[0] = img_name + "_side.png"
 
-        if on_off[2] == 1:
-            #images_unscaled[2].thumbnail((maxsize_b, maxsize_c))
-            a = images_unscaled[2].resize((maxsize_b, maxsize_c))
-            a.save(img_dir + img_name + "_top.png", "PNG")
-            self.views[2] = img_name + "_top.png"
+            if on_off[1] == 1:
+                #images_unscaled[1].thumbnail((maxsize_c, maxsize_a))
+                a = images_unscaled[1].resize((w_all, h_all))
+                a.save(img_dir + img_name + "_front.png", "PNG")
+                self.views[1] = img_name + "_front.png"
 
-        if on_off[3] == 1:
-            #images_unscaled[3].thumbnail((maxsize_c, maxsize_a))
-            a = images_unscaled[3].resize((maxsize_c, maxsize_a))
-            a.save(img_dir + img_name + "_rear.png", "PNG")
-            self.views[3] = img_name + "_rear.png"
+            if on_off[2] == 1:
+                #images_unscaled[2].thumbnail((maxsize_b, maxsize_c))
+                a = images_unscaled[2].resize((l_all, w_all))
+                a.save(img_dir + img_name + "_top.png", "PNG")
+                self.views[2] = img_name + "_top.png"
+
+            if on_off[3] == 1:
+                #images_unscaled[3].thumbnail((maxsize_c, maxsize_a))
+                a = images_unscaled[3].resize((w_all, h_all))
+                a.save(img_dir + img_name + "_rear.png", "PNG")
+                self.views[3] = img_name + "_rear.png"
+        else:
+            ## order is Side - Front - Top -Rear
+            h_all = min(images_unscaled[0].size[1], images_unscaled[1].size[1], images_unscaled[2].size[1], images_unscaled[3].size[1])
+            l_all = min(images_unscaled[0].size[0], images_unscaled[1].size[0], images_unscaled[4].size[0], images_unscaled[5].size[0])
+            w_all = min(images_unscaled[2].size[0], images_unscaled[3].size[0], images_unscaled[4].size[1], images_unscaled[5].size[1])
+            # print(maxsize_a, maxsize_b, maxsize_c)
+
+            if on_off[0] == 1:
+                # images_unscaled[0].thumbnail((maxsize_b, maxsize_a))
+                a = images_unscaled[0].resize((l_all, h_all))
+                # images_unscaled[0].save(img_dir + img_name + "_side.png", "PNG")
+                a.save(img_dir + img_name + "_left.png", "PNG")
+                self.views[0] = img_name + "_left.png"
+
+            if on_off[1] == 1:
+                # images_unscaled[1].thumbnail((maxsize_c, maxsize_a))
+                a = images_unscaled[1].resize((l_all, h_all))
+                a.save(img_dir + img_name + "_right.png", "PNG")
+                self.views[1] = img_name + "_right.png"
+
+            if on_off[2] == 1:
+                # images_unscaled[2].thumbnail((maxsize_b, maxsize_c))
+                a = images_unscaled[2].resize((w_all, h_all))
+                a.save(img_dir + img_name + "_front.png", "PNG")
+                self.views[2] = img_name + "_front.png"
+
+            if on_off[3] == 1:
+                # images_unscaled[3].thumbnail((maxsize_c, maxsize_a))
+                a = images_unscaled[3].resize((w_all, h_all))
+                a.save(img_dir + img_name + "_rear.png", "PNG")
+                self.views[3] = img_name + "_rear.png"
+
+            if on_off[4] == 1:
+                a = images_unscaled[4].resize((l_all, w_all))
+                a.save(img_dir + img_name + "_top.png", "PNG")
+                self.views[4] = img_name + "_top.png"
+
+            if on_off[5] == 1:
+                a = images_unscaled[5].resize((l_all, w_all))
+                a.save(img_dir + img_name + "_bottom.png", "PNG")
+                self.views[5] = img_name + "_bottom.png"
+
+
 
     def get_views(self):
         a = "\n".join(list(i for i in self.views if i is not ""))
