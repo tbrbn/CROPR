@@ -2,7 +2,7 @@ import sys
 import os
 from imageio import imread
 from tkinter import Canvas, Tk, CENTER, \
-    Button, Scrollbar, VERTICAL, HORIZONTAL, RIGHT, BOTTOM, Y, X, LEFT, BOTH, messagebox
+    Button, Scrollbar, VERTICAL, HORIZONTAL, RIGHT, BOTTOM, Y, X, LEFT, BOTH, messagebox, Checkbutton, IntVar
 from PIL import ImageTk, Image, ImageEnhance
 from tkinter.filedialog import askopenfile, askdirectory, Frame
 from scipy import ndimage as ndi
@@ -27,13 +27,17 @@ class MainWindow:
         self.img_dir = None
         self.img_name = None
         self.img_is_loaded = False
+        self.box_settings_var = IntVar()
         self.frame_buttons = Frame()
         self.img = ImageTk.PhotoImage(Image.open(resource_path("CROPR_intro.png")).convert("RGBA").resize((400, 400)))
         self.img_on_canvas = self.canvas.create_image(202, 202, anchor=CENTER, image=self.img, )
         self.button = Button(self.frame_buttons, text="Import image", command=lambda: self.file_opener())
         self.button_dir = Button(self.frame_buttons, text="Output directory", command=lambda: self.choose_output_dir())
+        self.box_settings = Checkbutton(self.frame_buttons, variable=self.box_settings_var,
+                                        text="All views", onvalue = 1, offvalue = 0)
         self.button.pack(side=LEFT, padx=3, pady=3)
         self.button_dir.pack(side=LEFT, padx=3, pady=3)
+        self.box_settings.pack(side=BOTTOM, padx=3, pady=3)
         self.frame_buttons.pack()
         self.ctrl_v = self.root.bind('<Control-v>', lambda e: self.clipboard_import(e))
         self.canvas.pack()
@@ -46,7 +50,9 @@ class MainWindow:
         self.__init__(self.root)
 
     def file_opener(self):
+        var = self.box_settings_var.get()
         self.reset_canvas()
+        self.box_settings_var.set(var)
         a = askopenfile()
         if a is not None:
             self.img_path = a.name
@@ -160,7 +166,7 @@ class Lines:
         self.mask = None
         self.rect_dash = []
         self.cropbot = []
-        self.on_off = [1, 1, 1, 1]
+        self.on_off = [1, 1, 1, 1, 1, 1]
         self.master.bind(
             '<Escape>', lambda e: self.skip())
         self.master.bind(
@@ -328,18 +334,37 @@ class Lines:
         self.canvas.delete(self.text)
 
     def update_text(self, i):
-        if i == 0:
-            self.view_text = "Side\n"
-        if i == 1:
-            self.view_text = "Front\n"
-        if i == 2:
-            self.view_text = "Top\n"
-        if i == 3:
-            self.view_text = "Rear\n"
-        self.refresh_text()
-        if i == 4:
-            self.view_text = "Click to finish\n<CTRL-Z> - undo\n" + self.zoom_text
-            self.canvas.itemconfig(self.text, text=self.view_text)
+        if self.main_window.box_settings_var.get() == 0:
+            if i == 0:
+                self.view_text = "Side\n"
+            if i == 1:
+                self.view_text = "Front\n"
+            if i == 2:
+                self.view_text = "Top\n"
+            if i == 3:
+                self.view_text = "Rear\n"
+            self.refresh_text()
+            if i == 4:
+                self.view_text = "Click to finish\n<CTRL-Z> - undo\n" + self.zoom_text
+                self.canvas.itemconfig(self.text, text=self.view_text)
+        else:
+            if i == 0:
+                self.view_text = "Left\n"
+            if i == 1:
+                self.view_text = "Right\n"
+            if i == 2:
+                self.view_text = "Front\n"
+            if i == 3:
+                self.view_text = "Rear\n"
+            if i == 4:
+                self.view_text = "Top\n"
+            if i == 5:
+                self.view_text = "Bottom\n"
+            self.refresh_text()
+            if i == 6:
+                self.view_text = "Click to finish\n<CTRL-Z> - undo\n" + self.zoom_text
+                self.canvas.itemconfig(self.text, text=self.view_text)
+
 
     def follow_mouse(self, event, vline, hline, text):
         x0, y0 = self.canvas.canvasx(0), self.canvas.canvasy(0)
@@ -374,6 +399,7 @@ class Lines:
         self.master.unbind('-')
         self.zoom_text = "Zoom locked\n"
         self.update_text(self.i)
+        self.main_window.box_settings['state'] = 'disabled'
         x0, y0 = self.canvas.canvasx(0), self.canvas.canvasy(0)
         wx0, wy0 = event.x + x0, event.y + y0
         if wx0 > self.main_window.img.width():
@@ -429,7 +455,8 @@ class Lines:
                     self.contraster = ContrastAdjuster(self, self.cropbot[-1])
                 self.i = self.i + 1
                 self.update_text(self.i)
-        if self.i == 4:
+        if (self.i == 4 and self.main_window.box_settings_var.get() == 0)\
+                or (self.i == 6 and self.main_window.box_settings_var.get() == 1):
             self.master.unbind('<Escape>')
             if len(self.clicks) == 1:
                 self.autoscale_finish()
@@ -805,7 +832,7 @@ class ContrastAdjuster:
 
 class AutoScaler:
     def __init__(self, images_unscaled, img_dir, img_name, on_off):
-        self.views = ["", "", "", ""]
+        self.views = ["", "", "", "", "", ""]
         self.on_off = on_off
         ## order is Side - Front - Top -Rear
         # self.get_shortest_length(images_unscaled)
