@@ -28,7 +28,7 @@ class MainWindow:
         self.img_name = None
         self.img_is_loaded = False
         self.frame_buttons = Frame()
-        self.img = ImageTk.PhotoImage(Image.open(resource_path("../../CROPR_intro.png")).convert("RGBA").resize((400, 400)))
+        self.img = ImageTk.PhotoImage(Image.open(resource_path("CROPR_intro.png")).convert("RGBA").resize((400, 400)))
         self.img_on_canvas = self.canvas.create_image(202, 202, anchor=CENTER, image=self.img, )
         self.button = Button(self.frame_buttons, text="Import image", command=lambda: self.file_opener())
         self.button_dir = Button(self.frame_buttons, text="Output directory", command=lambda: self.choose_output_dir())
@@ -846,7 +846,7 @@ class AutoScaler:
 
 def main():
     root = Tk()
-    icon = ImageTk.PhotoImage(Image.open(resource_path("../../CROPR_logo.png")))
+    icon = ImageTk.PhotoImage(Image.open(resource_path("CROPR_logo.png")))
     root.wm_title("CROPR 0.9.6-beta")
     root.iconphoto(False, icon)
     root.protocol("WM_DELETE_WINDOW")

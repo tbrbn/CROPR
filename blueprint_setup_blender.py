@@ -23,7 +23,7 @@ from bpy.types import Operator, OperatorFileListElement
 
 def read_some_data(context, directory, files, *use_some_setting):
     print("Scanning and placing the blueprints")
-    bp_front, bp_side, bp_left, bp_right, bp_top, bp_bottom, bp_rear = "","","","","","",""
+    bp_front, bp_side, bp_left, bp_right, bp_top, bp_bottom, bp_rear = "", "", "", "", "", "", ""
     for i in files:
         if "_front." in i.name:
             bp_front = directory+i.name
