@@ -83,6 +83,39 @@ def place_the_imported_images(bp_front, bp_side, bp_left, bp_right, bp_top, bp_b
                 bpy.context.object.empty_image_side = 'FRONT'
                 bpy.context.object.use_empty_image_alpha = True
                 bpy.context.object.color[3] = 0.5
+                
+            if bp_right is not '':
+                bpy.ops.view3d.view_axis(ctx, type="RIGHT")
+                bpy.ops.object.load_reference_image(filepath=bp_right)
+                # Lines below to delete once the view_align stuff is fixed
+                bpy.ops.transform.rotate(value=3*math.pi/2,orient_axis='X')
+                bpy.ops.transform.rotate(value=3*math.pi/2,orient_axis='Z')
+                ###
+                side_w = bpy.data.images[bp_right.split("\\")[-1]].size[0]
+                side_h = bpy.data.images[bp_right.split("\\")[-1]].size[1]
+                s = max(side_w/front_w,front_w/side_w)
+                bpy.ops.transform.resize(value = (s,s,s))
+                bpy.ops.transform.translate(value = (-4,0,0) )
+                bpy.context.object.empty_image_side = 'FRONT'
+                bpy.context.object.use_empty_image_alpha = True
+                bpy.context.object.color[3] = 0.5
+                
+            if bp_left is not '':
+                bpy.ops.view3d.view_axis(ctx, type="LEFT")
+                bpy.ops.object.load_reference_image(filepath=bp_left)
+                # Lines below to delete once the view_align stuff is fixed
+                bpy.ops.transform.rotate(value=3*math.pi/2,orient_axis='X')
+                bpy.ops.transform.rotate(value=math.pi/2,orient_axis='Z')
+                ###
+                side_w = bpy.data.images[bp_left.split("\\")[-1]].size[0]
+                side_h = bpy.data.images[bp_left.split("\\")[-1]].size[1]
+                s = max(side_w/front_w,front_w/side_w)
+                bpy.ops.transform.resize(value = (s,s,s))
+                bpy.ops.transform.translate(value = (4,0,0) )
+                bpy.context.object.empty_image_side = 'FRONT'
+                bpy.context.object.use_empty_image_alpha = True
+                bpy.context.object.color[3] = 0.5
+            
             if bp_top is not '':
                 bpy.ops.view3d.view_axis(ctx, type="TOP")
                 bpy.ops.object.load_reference_image(filepath=bp_top)
@@ -97,6 +130,23 @@ def place_the_imported_images(bp_front, bp_side, bp_left, bp_right, bp_top, bp_b
                 bpy.context.object.empty_image_side = 'FRONT'
                 bpy.context.object.use_empty_image_alpha = True
                 bpy.context.object.color[3] = 0.5
+
+            if bp_bottom is not '':
+                bpy.ops.view3d.view_axis(ctx, type="BOTTOM")
+                bpy.ops.object.load_reference_image(filepath=bp_bottom)
+                # Lines below to delete once the view_align stuff is fixed
+                bpy.ops.transform.rotate(value=3*math.pi/2,orient_axis='Z')
+                bpy.ops.transform.rotate(value=math.pi,orient_axis='Y')
+                ###
+                top_w = bpy.data.images[bp_bottom.split("\\")[-1]].size[0]
+                top_h = bpy.data.images[bp_bottom.split("\\")[-1]].size[1]
+                s = max(top_w/front_w,front_w/top_w)
+                bpy.ops.transform.resize(value = (s,s,s) )
+                bpy.ops.transform.translate(value = (0,0,5) )
+                bpy.context.object.empty_image_side = 'FRONT'
+                bpy.context.object.use_empty_image_alpha = True
+                bpy.context.object.color[3] = 0.5
+                
             if bp_rear is not '':
                 bpy.ops.view3d.view_axis(ctx, type="BACK")
                 bpy.ops.object.load_reference_image(filepath=bp_rear)
