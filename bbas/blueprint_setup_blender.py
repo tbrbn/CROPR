@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Import Blueprints",
     "author": "Thibaut Bourbon",
-    "version": (1, 0),
+    "version": (1, 1),
     "blender": (2, 83, 4),
     "location": "File > Import > Blueprints",
     "description": "Import blueprints and place them accordingly",
@@ -67,7 +67,7 @@ def place_the_imported_images(bp_front, bp_side, bp_left, bp_right, bp_top, bp_b
                 bpy.context.object.color[3] = 0.5
             else:
                 front_w = 1
-                front_h =1
+                front_h = 1
             if bp_side is not '':
                 bpy.ops.view3d.view_axis(ctx, type="RIGHT")
                 bpy.ops.object.load_reference_image(filepath=bp_side)

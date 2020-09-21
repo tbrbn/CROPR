@@ -953,7 +953,7 @@ class AutoScaler:
 def main():
     root = Tk()
     icon = ImageTk.PhotoImage(Image.open(resource_path("CROPR_logo.png")))
-    root.wm_title("CROPR 0.9.7-beta")
+    root.wm_title("CROPR 0.9.7a")
     root.iconphoto(False, icon)
     root.protocol("WM_DELETE_WINDOW")
     main_window = MainWindow(root)
