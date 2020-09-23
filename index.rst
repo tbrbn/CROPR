@@ -24,6 +24,18 @@ Some edge cases exists, which is why CROPR has the following features:
 - Zoom
 - Manual mode (no contour detection)
 
+Versions log
+------------
+0.9.7a - 2020/09/21
+
+- New features:
+    - "All views" checkbox
+    - "Transparent" checkbox
+
+
+
+
+
 Installation
 ------------
 
@@ -122,6 +134,11 @@ is always the following:
 
 - Side > Front > Top > Rear
 
+If before starting you check the "All views" check box, then you will have to crop all
+6 views:
+
+- Left > Right > Front > Rear > Top > Bottom
+
 If you're not sure, just take a look beneath the cursor, the current view being treated is displayed.
 
 To isolate the view, simply define by two clicks a large bounding box around the view. After the second click, CROPR will automatically
@@ -136,6 +153,8 @@ Repeat this operation for each view and after the last view, you have one last c
 Then, a pop-up message will confirm everything went well and where you can find the output files.
 
 .. image:: imgs/sucess.jpg
+
+When the "Transparent" box is checked, the background will be removed in the output.
 
 Skipping view
 -------------
